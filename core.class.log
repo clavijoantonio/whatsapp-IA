@@ -1,27 +1,12 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '704A00F36CCF0A5397626D5E30BB72B3',
+    id: 'AC65F47537FDD066B868E256C8B31180',
     participant: undefined
   },
-  messageTimestamp: 1748054423,
-  pushName: 'Eli Ladino🍂',
-  broadcast: false,
-  messageStubType: 2,
-  messageStubParameters: [ 'Message absent from node' ],
-  body: undefined,
-  from: '573207386640'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '573207386640@s.whatsapp.net',
-    fromMe: false,
-    id: '704A00F36CCF0A5397626D5E30BB72B3',
-    participant: undefined
-  },
-  messageTimestamp: 1748054423,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334784,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
     conversation: 'Hola',
@@ -32,11 +17,11 @@
     }
   },
   body: 'Hola',
-  from: '573207386640'
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9662c590-35c8-4f5e-9d51-d085eaac81f5',
-  keyword: 'key_6bf005ca-bdea-4048-9f7c-c4530e1d9f15',
+  ref: 'ans_a62511f3-4e06-4ef4-bc11-de8ac69397ec',
+  keyword: 'key_a206e967-db4c-4baa-a3b6-3b9126e5ac03',
   answer: '__call_action__',
   options: {
     media: null,
@@ -50,51 +35,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'd3d10bd5c45c5e10c6c1c4633bfd00aa'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_555b53ef-7332-4564-83c1-2a4e649ea3e6',
-  keyword: 'ans_9662c590-35c8-4f5e-9d51-d085eaac81f5',
-  answer: '__call_action__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: 'b4b2a66b4cacc7a283b02f0ad80bc594'
+  refSerialize: 'a4653efb7206fbe263ef18d857971475'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '6CAAB7DA4BCDBD44819DB065176E6366',
+    id: 'ACD0384E956364371FD534182BAC78AB',
     participant: undefined
   },
-  messageTimestamp: 1748054436,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334799,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Nada',
+    conversation: 'Dame',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  status: 4,
-  body: 'Nada',
-  from: '573207386640'
+  body: 'Dame',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -108,32 +74,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '202BAADF1F1E7C71E247A31670A011B9',
+    id: 'AC62A8BC4C3BC332AD94E65DC9C483C2',
     participant: undefined
   },
-  messageTimestamp: 1748054455,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334809,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Que día es hoy',
+    conversation: 'Dame el. Menú de hoy',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Que día es hoy',
-  from: '573207386640'
+  body: 'Dame el. Menú de hoy',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -147,32 +113,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '3A06DAB4751081E90FAA88FEE396ADFD',
+    id: 'ACFE0F336F2506637CB29105473EBA48',
     participant: undefined
   },
-  messageTimestamp: 1748054476,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334840,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Sii bonito',
+    conversation: 'Cuando tiene mesas disponible',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Sii bonito',
-  from: '573207386640'
+  body: 'Cuando tiene mesas disponible',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -186,33 +152,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'FAE242E0685AC86CD8857A4422019803',
+    id: 'ACF4A49E1FE92960D49B57D7DAC2937F',
     participant: undefined
   },
-  messageTimestamp: 1748054494,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334865,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Gracias',
+    conversation: 'Necesito una para 4 personas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  status: 4,
-  body: 'Gracias',
-  from: '573207386640'
+  body: 'Necesito una para 4 personas',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -226,32 +191,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '4DEFB9295A18FADF036407E637B29518',
+    id: 'AC2260CA298142FC2402399B08BF8869',
     participant: undefined
   },
-  messageTimestamp: 1748054508,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334876,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Que me cuentas?',
+    conversation: 'Ok',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Que me cuentas?',
-  from: '573207386640'
+  body: 'Ok',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -265,32 +230,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'F8FB7A37C7CCC2B4458A94DEE8576594',
+    id: 'AC6E8570DD24809F444BD681ADFC88A0',
     participant: undefined
   },
-  messageTimestamp: 1748054531,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334924,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Quién eres?',
+    conversation: 'Pero necesito la de la terraza de 6 personas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Quién eres?',
-  from: '573207386640'
+  body: 'Pero necesito la de la terraza de 6 personas',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -304,32 +269,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '4BF2633841524D01ADA1792BD25401A3',
+    id: 'AC9E61EC25FD40E6631357AAE386020C',
     participant: undefined
   },
-  messageTimestamp: 1748054568,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334932,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Sin agresividad',
+    conversation: 'Si esa',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Sin agresividad',
-  from: '573207386640'
+  body: 'Si esa',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -343,32 +308,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '573207386640@s.whatsapp.net',
+    remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: '0868544D757E60CFE37714C3944D3C00',
+    id: 'AC0415EC5946A0C10B534978AECB12C4',
     participant: undefined
   },
-  messageTimestamp: 1748054661,
-  pushName: 'Eli Ladino🍂',
+  messageTimestamp: 1758334971,
+  pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'B',
+    conversation: 'Reseva la 6 personas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'B',
-  from: '573207386640'
+  body: 'Reseva la 6 personas',
+  from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
+  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
+  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -382,83 +347,5 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '573207386640@s.whatsapp.net',
-    fromMe: false,
-    id: 'D51F8DDDA3819541648DB0777EEBA610',
-    participant: undefined
-  },
-  messageTimestamp: 1748054704,
-  pushName: 'Eli Ladino🍂',
-  broadcast: false,
-  message: Message {
-    conversation: 'Bueno que descanses',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Bueno que descanses',
-  from: '573207386640'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
-  answer: '__capture_only_intended__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '573207386640@s.whatsapp.net',
-    fromMe: false,
-    id: '4CD24E30E0B0AC5E6B9B726ECA3F0A70',
-    participant: undefined
-  },
-  messageTimestamp: 1748054725,
-  pushName: 'Eli Ladino🍂',
-  broadcast: false,
-  message: Message {
-    conversation: 'Chao',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Chao',
-  from: '573207386640'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8840ce53-5b17-445d-9864-a92b9cf27ca1',
-  keyword: 'key_0dda207f-e104-4a7a-aa1b-70f485142023',
-  answer: '__capture_only_intended__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: 'e16169aa0c8ff4c191bdc75823f4797d'
+  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
 }
