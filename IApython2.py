@@ -11,8 +11,10 @@ from sentence_transformers import SentenceTransformer
 import logging
 import time
 import re
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 import gc
+import json
+from datetime import datetime
 
 # Configurar logging detallado
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -26,7 +28,9 @@ socketio = SocketIO(app, cors_allowed_origins="*", logger=True, engineio_logger=
 model = None
 tokenizer = None
 embedding_model = None
-chat_pipeline = None
+
+# Almacenamiento de historial de conversaciones por sesión
+conversation_history = {}
 
 # Configurar ChromaDB
 try:
@@ -41,7 +45,7 @@ except Exception as e:
     client = chromadb.Client()
     collection = client.create_collection(name="documentos_entrenamiento")
 
-# Datos del restaurante en español (mantener igual)
+# Datos del restaurante en español
 documents = [
     # Disponibilidad de Mesas
     "Tenemos disponibilidad para 4 personas a las 8:00 PM esta noche",
@@ -141,6 +145,57 @@ ids = [
     "cortesia_001", "cortesia_002", "cortesia_003", "cortesia_004"
 ]
 
+# Gestión del historial de conversación
+class ConversationManager:
+    def __init__(self, max_history_length: int = 10):
+        self.max_history_length = max_history_length
+        self.histories = {}
+    
+    def get_conversation_history(self, session_id: str) -> List[Dict]:
+        """Obtiene el historial de conversación para una sesión"""
+        if session_id not in self.histories:
+            self.histories[session_id] = []
+        return self.histories[session_id]
+    
+    def add_message(self, session_id: str, role: str, content: str):
+        """Añade un mensaje al historial"""
+        if session_id not in self.histories:
+            self.histories[session_id] = []
+        
+        message = {
+            "role": role,
+            "content": content,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        self.histories[session_id].append(message)
+        
+        # Mantener solo el historial más reciente
+        if len(self.histories[session_id]) > self.max_history_length:
+            self.histories[session_id] = self.histories[session_id][-self.max_history_length:]
+    
+    def get_context_summary(self, session_id: str, max_tokens: int = 500) -> str:
+        """Genera un resumen del contexto de la conversación"""
+        history = self.get_conversation_history(session_id)
+        if not history:
+            return ""
+        
+        # Crear un resumen de la conversación
+        context_parts = []
+        for i, message in enumerate(history[-5:]):  # Últimos 5 mensajes
+            speaker = "Usuario" if message["role"] == "user" else "Asistente"
+            context_parts.append(f"{speaker}: {message['content']}")
+        
+        return " | ".join(context_parts)
+    
+    def clear_history(self, session_id: str):
+        """Limpia el historial de una sesión"""
+        if session_id in self.histories:
+            del self.histories[session_id]
+
+# Instancia global del gestor de conversaciones
+conversation_manager = ConversationManager()
+
 # Función para inicializar datos en ChromaDB
 def inicializar_chroma():
     try:
@@ -188,89 +243,120 @@ def buscar_chroma(user_input: str, top_k: int = 5, threshold: float = 0.4) -> Op
         logger.error(f"❌ Error en búsqueda Chroma: {e}")
         return None
 
-# Cargar modelo liviano pero efectivo
-def cargar_modelo_liviano():
-    logger.info("🔄 Cargando modelo liviano optimizado...")
+# Cargar modelo Phi-3 con configuración especial
+def cargar_modelo_phi3():
+    logger.info("🔄 Cargando Microsoft Phi-3-mini-4k-instruct...")
     try:
-        # Opción 1: Microsoft's DialoGPT-medium (más estable)
-        model_name = "microsoft/DialoGPT-medium"
+        #model_name = "microsoft/Phi-3-mini-4k-instruct"
+        model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
         
-        # Opción 2: GPT2 en español (más liviano)
-        # model_name = "datificate/gpt2-small-spanish"
-        
-        # Opción 3: DistilGPT2 (el más liviano)
-        # model_name = "distilgpt2"
-        
+        # Configuración especial para Phi-3
         tokenizer = AutoTokenizer.from_pretrained(
             model_name,
+            trust_remote_code=True,
             padding_side="left"
         )
         
+        # Añadir tokens especiales si es necesario
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
-
+        
         # Cargar modelo con configuración optimizada
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype=torch.float32,  # Usar float32 para mayor estabilidad
-            low_cpu_mem_usage=True,
-            device_map="auto" if torch.cuda.is_available() else None
+            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+            device_map="auto" if torch.cuda.is_available() else None,
+            trust_remote_code=True,
+            low_cpu_mem_usage=True
         )
         
         # Configurar modelo para inferencia
         model.eval()
-        if torch.cuda.is_available():
-            model = model.cuda()
-        else:
-            model = model.cpu()
         
-        logger.info(f"✅ Modelo {model_name} cargado correctamente")
-        return model, tokenizer, None, None
+        logger.info(f"✅ Modelo Phi-3 cargado correctamente")
+        return model, tokenizer
         
     except Exception as e:
-        logger.error(f"❌ Error cargando modelo liviano: {e}")
-        # Fallback extremo - solo ChromaDB + respuestas predefinidas
-        logger.warning("⚠️  Usando modo solo ChromaDB + reglas")
-        return None, None, None, None
+        logger.error(f"❌ Error cargando Phi-3: {e}")
+        # Fallback a modelo más simple
+        logger.info("🔄 Intentando cargar DialoGPT como fallback...")
+        try:
+            model_name = "microsoft/DialoGPT-medium"
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+            model = AutoModelForCausalLM.from_pretrained(model_name)
+            model.eval()
+            logger.info("✅ DialoGPT cargado como fallback")
+            return model, tokenizer
+        except Exception as fallback_error:
+            logger.error(f"❌ Error cargando fallback: {fallback_error}")
+            return None, None
 
-# Sistema de templates optimizado
-def crear_prompt_optimizado(user_input: str, contexto_chroma: Optional[str] = None) -> str:
+# Crear prompt para Phi-3 con historial de conversación
+def crear_prompt_phi3(user_input: str, contexto_chroma: Optional[str] = None, session_id: str = None) -> str:
     """
-    Crea un prompt optimizado y seguro
+    Crea un prompt en formato instruct para Phi-3 con historial de conversación
     """
-    sistema = "Eres un asistente de restaurante español. Responde de manera amable y profesional."
-    
+    system_message = """Eres un asistente de restaurante español profesional y servicial. 
+Responde ÚNICAMENTE basado en la información proporcionada sobre el restaurante.
+Sé amable, conciso y profesional en tus respuestas.
+Mantén el contexto de la conversación anterior para proporcionar respuestas coherentes."""
+
     contexto = contexto_chroma if contexto_chroma else "Información general del restaurante."
     
-    prompt = f"{sistema}\nContexto: {contexto}\nPregunta: {user_input}\nRespuesta:"
+    # Obtener historial de conversación si existe
+    conversation_context = ""
+    if session_id:
+        conversation_context = conversation_manager.get_context_summary(session_id)
+    
+    # Formato instruct para Phi-3 con historial
+    messages = [
+        {"role": "system", "content": system_message},
+    ]
+    
+    # Añadir contexto de conversación si existe
+    if conversation_context:
+        messages.append({"role": "system", "content": f"Contexto de conversación anterior: {conversation_context}"})
+    
+    messages.extend([
+        {"role": "system", "content": f"Información del restaurante: {contexto}"},
+        {"role": "user", "content": user_input}
+    ])
+    
+    # Formatear para el tokenizer de Phi-3
+    prompt = tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True
+    )
     
     return prompt
 
-# Generar respuesta segura y controlada
-def generar_respuesta_segura(prompt: str, max_tokens: int = 100) -> str:
+# Generar respuesta con Phi-3
+def generar_respuesta_phi3(prompt: str, max_tokens: int = 150) -> str:
     global model, tokenizer
     
     try:
         if model is None or tokenizer is None:
             raise ValueError("Modelo no disponible")
         
+        # Tokenizar
         inputs = tokenizer(
             prompt,
             return_tensors="pt",
             truncation=True,
-            max_length=512,
+            max_length=2048,  # Phi-3 soporta hasta 4k tokens
             padding=True,
             return_attention_mask=True
         )
 
-        # Mover a dispositivo adecuado
+        # Mover a dispositivo
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         inputs = {k: v.to(device) for k, v in inputs.items()}
 
+        # Generar
         with torch.no_grad():
             outputs = model.generate(
-                inputs["input_ids"],
-                attention_mask=inputs["attention_mask"],
+                **inputs,
                 max_new_tokens=max_tokens,
                 do_sample=True,
                 temperature=0.7,
@@ -281,27 +367,28 @@ def generar_respuesta_segura(prompt: str, max_tokens: int = 100) -> str:
                 early_stopping=True
             )
 
+        # Decodificar
         respuesta = tokenizer.decode(outputs[0], skip_special_tokens=True)
         
-        # Extraer solo la parte de la respuesta
+        # Extraer solo la respuesta del asistente
         respuesta = respuesta.replace(prompt, "").strip()
         
-        # Limpiar respuesta
-        respuesta = re.sub(r'<\|.*?\|>', '', respuesta)  # Remover tokens especiales
-        respuesta = respuesta.split('\n')[0].strip()  # Tomar primera línea
+        # Limpiar
+        respuesta = re.sub(r'<\|.*?\|>', '', respuesta)
+        respuesta = respuesta.split('\n')[0].strip()
         
         return respuesta if respuesta else "¿En qué más puedo ayudarte?"
             
     except Exception as e:
-        logger.error(f"❌ Error en generación segura: {e}")
+        logger.error(f"❌ Error generando con Phi-3: {e}")
         raise e
 
 # Sistema de respuestas con múltiples capas de fallback
-def generar_respuesta_inteligente(user_input: str, contexto_chroma: Optional[str] = None) -> str:
-    """Sistema de respuestas con fallback escalonado"""
+def generar_respuesta_inteligente(user_input: str, contexto_chroma: Optional[str] = None, session_id: str = None) -> str:
+    """Sistema de respuestas con fallback escalonado y historial"""
     
     # Capa 1: Respuestas predefinidas específicas
-    respuesta_predefinida = obtener_respuesta_predefinida(user_input, contexto_chroma)
+    respuesta_predefinida = obtener_respuesta_predefinida(user_input, contexto_chroma, session_id)
     if respuesta_predefinida:
         return respuesta_predefinida
     
@@ -309,19 +396,20 @@ def generar_respuesta_inteligente(user_input: str, contexto_chroma: Optional[str
     if contexto_chroma:
         return contexto_chroma
     
-    # Capa 3: Modelo AI (si está disponible)
+    # Capa 3: Modelo AI (Phi-3 o fallback) con historial
     try:
-        prompt = crear_prompt_optimizado(user_input, contexto_chroma)
-        respuesta = generar_respuesta_segura(prompt)
-        return respuesta
+        if model is not None and tokenizer is not None:
+            prompt = crear_prompt_phi3(user_input, contexto_chroma, session_id)
+            respuesta = generar_respuesta_phi3(prompt)
+            return respuesta
     except Exception as e:
-        logger.warning(f"⚠️  Modelo AI no disponible: {e}")
+        logger.warning(f"⚠️  Error con modelo AI: {e}")
     
     # Capa 4: Respuesta genérica
     return "¿En qué más puedo ayudarte? Puedo ayudarte con información sobre menú, reservas, horarios y ubicación."
 
-# Respuestas predefinidas mejoradas
-def obtener_respuesta_predefinida(user_input: str, contexto_chroma: Optional[str] = None) -> Optional[str]:
+# Respuestas predefinidas mejoradas con contexto
+def obtener_respuesta_predefinida(user_input: str, contexto_chroma: Optional[str] = None, session_id: str = None) -> Optional[str]:
     user_input_lower = user_input.lower()
     
     # Palabras clave y respuestas
@@ -339,93 +427,172 @@ def obtener_respuesta_predefinida(user_input: str, contexto_chroma: Optional[str
         'vegetariano': "Tenemos opciones vegetarianas: lasaña de berenjena, curry de verduras y ensalada mediterránea."
     }
     
-    # Buscar coincidencia exacta primero
+    # Buscar coincidencia
     for keyword, respuesta in respuestas.items():
         if keyword in user_input_lower:
             return respuesta
     
-    # Usar contexto de ChromaDB si está disponible
+    # Usar contexto de ChromaDB
     if contexto_chroma:
         return contexto_chroma
     
     return None
 
-# FUNCIÓN PRINCIPAL GENERATE_RESPONSE
-def generate_response(user_input: str, context: Optional[Dict] = None) -> str:
+# FUNCIÓN PRINCIPAL GENERATE_RESPONSE MEJORADA CON HISTORIAL
+def generate_response(user_input: str, context: Optional[Dict] = None, session_id: str = None) -> Tuple[str, Dict]:
     global model, tokenizer
     
     try:
-        logger.info(f"🧠 Generando respuesta para: '{user_input}'")
+        logger.info(f"🧠 Generando respuesta para: '{user_input}' - Sesión: {session_id}")
         start_time = time.time()
         
-        # 1. Buscar contexto relevante
+        # Si no hay session_id, usar uno por defecto
+        if not session_id:
+            session_id = "default_session"
+        
+        # 1. Añadir mensaje del usuario al historial
+        conversation_manager.add_message(session_id, "user", user_input)
+        
+        # 2. Buscar contexto relevante
         contexto_chroma = buscar_chroma(user_input)
         
-        # 2. Generar respuesta inteligente
-        respuesta = generar_respuesta_inteligente(user_input, contexto_chroma)
+        # 3. Generar respuesta inteligente con historial
+        respuesta = generar_respuesta_inteligente(user_input, contexto_chroma, session_id)
+        
+        # 4. Añadir respuesta al historial
+        conversation_manager.add_message(session_id, "assistant", respuesta)
+        
+        # 5. Preparar contexto actualizado
+        updated_context = {
+            "session_id": session_id,
+            "conversation_history": conversation_manager.get_conversation_history(session_id),
+            "last_interaction": datetime.now().isoformat()
+        }
         
         processing_time = time.time() - start_time
         logger.info(f"✅ Respuesta generada en {processing_time:.2f}s: '{respuesta}'")
-        return respuesta
+        logger.info(f"📊 Historial de sesión {session_id}: {len(conversation_manager.get_conversation_history(session_id))} mensajes")
+        
+        return respuesta, updated_context
         
     except Exception as e:
         logger.error(f"❌ Error crítico en generate_response: {e}")
-        return "Disculpa las molestias. ¿Podrías repetir tu pregunta? Estoy aquí para ayudarte."
+        error_msg = "Disculpa las molestias. ¿Podrías repetir tu pregunta? Estoy aquí para ayudarte."
+        
+        # Añadir mensaje de error al historial
+        if session_id:
+            conversation_manager.add_message(session_id, "assistant", error_msg)
+        
+        return error_msg, {"session_id": session_id, "error": str(e)}
 
-# Manejo de conexiones SocketIO
+# Manejo de conexiones SocketIO MEJORADO
 @socketio.on('connect')
 def handle_connect():
-    logger.info(f'✅ Cliente conectado: {request.sid}')
-    emit('status', {'message': 'Conectado al servidor de IA'})
+    session_id = request.sid
+    logger.info(f'✅ Cliente conectado: {session_id}')
+    
+    # Inicializar historial para esta sesión
+    conversation_manager.get_conversation_history(session_id)
+    
+    emit('status', {
+        'message': 'Conectado al servidor de IA',
+        'session_id': session_id
+    })
 
 @socketio.on('disconnect')
 def handle_disconnect():
-    logger.info(f'❌ Cliente desconectado: {request.sid}')
+    session_id = request.sid
+    logger.info(f'❌ Cliente desconectado: {session_id}')
+    
+    # Opcional: Limpiar historial después de un tiempo
+    # Podrías mantenerlo por un tiempo para reanudar conversaciones
+
+@socketio.on('clear_history')
+def handle_clear_history(data):
+    session_id = request.sid
+    conversation_manager.clear_history(session_id)
+    logger.info(f'🗑️  Historial limpiado para sesión: {session_id}')
+    emit('history_cleared', {'session_id': session_id})
 
 @socketio.on('message')
 def handle_message(data):
     try:
-        logger.info(f'📥 Mensaje recibido: {data}')
+        session_id = request.sid
+        logger.info(f'📥 Mensaje recibido de sesión {session_id}: {data}')
         
         if isinstance(data, dict) and 'text' in data:
             user_input = data['text']
             context = data.get('context', {})
             
-            logger.info(f'👤 Mensaje del usuario: "{user_input}"')
+            logger.info(f'👤 Mensaje del usuario ({session_id}): "{user_input}"')
             
-            # Generar respuesta
-            response = generate_response(user_input, context)
+            # Generar respuesta con historial
+            response, updated_context = generate_response(user_input, context, session_id)
             
             # Enviar respuesta
             response_data = {
                 'text': response,
-                'context': context
+                'context': updated_context,
+                'session_id': session_id,
+                'timestamp': datetime.now().isoformat()
             }
             
-            logger.info(f'📤 Enviando respuesta: {response_data}')
+            logger.info(f'📤 Enviando respuesta a sesión {session_id}: {len(response_data["text"])} caracteres')
             emit('response', response_data)
             
         else:
             error_msg = 'Formato de mensaje inválido'
             logger.warning(f'⚠️  {error_msg}: {data}')
-            emit('error', {'text': error_msg})
+            emit('error', {'text': error_msg, 'session_id': session_id})
             
     except Exception as e:
+        session_id = request.sid
         error_msg = f'Error procesando mensaje: {str(e)}'
-        logger.error(f'❌ {error_msg}')
-        emit('error', {'text': 'Error interno del servidor'})
+        logger.error(f'❌ {error_msg} - Sesión: {session_id}')
+        emit('error', {'text': 'Error interno del servidor', 'session_id': session_id})
 
-# Ruta de salud
+# Nueva ruta para obtener historial de conversación
+@app.route('/conversation/<session_id>', methods=['GET'])
+def get_conversation_history(session_id):
+    try:
+        history = conversation_manager.get_conversation_history(session_id)
+        return {
+            'session_id': session_id,
+            'history': history,
+            'message_count': len(history)
+        }
+    except Exception as e:
+        return {'error': str(e)}, 500
+
+# Ruta para limpiar historial específico
+@app.route('/conversation/<session_id>', methods=['DELETE'])
+def clear_conversation_history(session_id):
+    try:
+        conversation_manager.clear_history(session_id)
+        return {'message': f'Historial de sesión {session_id} limpiado correctamente'}
+    except Exception as e:
+        return {'error': str(e)}, 500
+
+# Ruta de salud mejorada
 @app.route('/health')
 def health_check():
-    return {'status': 'ok', 'model_loaded': model is not None}
+    session_count = len(conversation_manager.histories)
+    total_messages = sum(len(history) for history in conversation_manager.histories.values())
+    
+    return {
+        'status': 'ok', 
+        'model_loaded': model is not None,
+        'active_sessions': session_count,
+        'total_messages': total_messages,
+        'conversation_manager': 'active'
+    }
 
 # Función principal optimizada
 def main():
-    global model, tokenizer, embedding_model
+    global model, tokenizer
     
     try:
-        logger.info("🚀 Iniciando servidor de IA optimizado...")
+        logger.info("🚀 Iniciando servidor de IA con Phi-3 y gestión de historial...")
         
         # Configuración optimizada
         torch.set_num_threads(min(2, os.cpu_count() or 1))
@@ -438,10 +605,13 @@ def main():
         # Inicializar ChromaDB
         inicializar_chroma()
         
-        # Cargar el modelo liviano
-        model, tokenizer, _, _ = cargar_modelo_liviano()
+        # Cargar el modelo Phi-3
+        model, tokenizer = cargar_modelo_phi3()
         
-        logger.info("✅ Servidor configurado correctamente")
+        if model is None:
+            logger.warning("⚠️  Servidor funcionando en modo solo ChromaDB + reglas")
+        
+        logger.info("✅ Servidor configurado correctamente con gestión de historial")
        
         # Iniciar el servidor
         logger.info("🌐 Servidor SocketIO iniciado. Esperando conexiones...")

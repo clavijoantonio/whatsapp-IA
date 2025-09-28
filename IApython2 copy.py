@@ -191,7 +191,8 @@ def buscar_chroma(user_input: str, top_k: int = 5, threshold: float = 0.4) -> Op
 def cargar_modelo_phi3():
     logger.info("🔄 Cargando Microsoft Phi-3-mini-4k-instruct...")
     try:
-        model_name = "microsoft/Phi-3-mini-4k-instruct"
+        #model_name = "microsoft/Phi-3-mini-4k-instruct"
+        model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
         
         # Configuración especial para Phi-3
         tokenizer = AutoTokenizer.from_pretrained(

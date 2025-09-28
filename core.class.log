@@ -2,10 +2,10 @@
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC65F47537FDD066B868E256C8B31180',
+    id: 'AC4597F679FCB72130137050D1091F97',
     participant: undefined
   },
-  messageTimestamp: 1758334784,
+  messageTimestamp: 1759019447,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
@@ -20,8 +20,8 @@
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_a62511f3-4e06-4ef4-bc11-de8ac69397ec',
-  keyword: 'key_a206e967-db4c-4baa-a3b6-3b9126e5ac03',
+  ref: 'ans_901556d8-eea6-46fa-9a13-4b50f18b5684',
+  keyword: 'key_eb422987-540d-42a6-8842-2c1892272563',
   answer: '__call_action__',
   options: {
     media: null,
@@ -35,32 +35,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'a4653efb7206fbe263ef18d857971475'
+  refSerialize: 'dce2258efb7a2a70cebd8e78294ae746'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'ACD0384E956364371FD534182BAC78AB',
+    id: 'ACCD273E95751EDC4B324942AC49A33B',
     participant: undefined
   },
-  messageTimestamp: 1758334799,
+  messageTimestamp: 1759019455,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Dame',
+    conversation: 'Como esta',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Dame',
+  body: 'Como esta',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -74,32 +74,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC62A8BC4C3BC332AD94E65DC9C483C2',
+    id: 'AC96AB0A1E1D115716F2CDA4CC0FB9F8',
     participant: undefined
   },
-  messageTimestamp: 1758334809,
+  messageTimestamp: 1759019461,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Dame el. Menú de hoy',
+    conversation: 'Como esta',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Dame el. Menú de hoy',
+  body: 'Como esta',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -113,32 +113,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'ACFE0F336F2506637CB29105473EBA48',
+    id: 'ACF6DD9BC0C317CB53CBCA0788C74888',
     participant: undefined
   },
-  messageTimestamp: 1758334840,
+  messageTimestamp: 1759019478,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Cuando tiene mesas disponible',
+    conversation: 'Si',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Cuando tiene mesas disponible',
+  body: 'Si',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -152,32 +152,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'ACF4A49E1FE92960D49B57D7DAC2937F',
+    id: 'AC7BFF0B2403F8377C7E2F94C8244A80',
     participant: undefined
   },
-  messageTimestamp: 1758334865,
+  messageTimestamp: 1759019511,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Necesito una para 4 personas',
+    conversation: 'Tiene mesas para 4 personas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Necesito una para 4 personas',
+  body: 'Tiene mesas para 4 personas',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -191,32 +191,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC2260CA298142FC2402399B08BF8869',
+    id: 'ACA8AD72D0E8470872BDCE36747CC9F5',
     participant: undefined
   },
-  messageTimestamp: 1758334876,
+  messageTimestamp: 1759019525,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Ok',
+    conversation: 'Para 4 a las 9',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Ok',
+  body: 'Para 4 a las 9',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -230,32 +230,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC6E8570DD24809F444BD681ADFC88A0',
+    id: 'AC2BD51684194ACF83E50D66C80E78BC',
     participant: undefined
   },
-  messageTimestamp: 1758334924,
+  messageTimestamp: 1759019537,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Pero necesito la de la terraza de 6 personas',
+    conversation: 'Solo dos',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Pero necesito la de la terraza de 6 personas',
+  body: 'Solo dos',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -269,32 +269,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC9E61EC25FD40E6631357AAE386020C',
+    id: 'AC43795307D336F7C5E0B9906F166782',
     participant: undefined
   },
-  messageTimestamp: 1758334932,
+  messageTimestamp: 1759019571,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Si esa',
+    conversation: 'Necesito para 4 personas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Si esa',
+  body: 'Necesito para 4 personas',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -308,32 +308,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '573192184584@s.whatsapp.net',
     fromMe: false,
-    id: 'AC0415EC5946A0C10B534978AECB12C4',
+    id: 'AC36CE40E548FE0D13E8EF6FAC7DB59A',
     participant: undefined
   },
-  messageTimestamp: 1758334971,
+  messageTimestamp: 1759019612,
   pushName: 'Mayra',
   broadcast: false,
   message: Message {
-    conversation: 'Reseva la 6 personas',
+    conversation: 'Solo necesito una mesa para 4 peronas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Reseva la 6 personas',
+  body: 'Solo necesito una mesa para 4 peronas',
   from: '573192184584'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0c1762c8-7f12-4a66-8a75-93d1a748af3c',
-  keyword: 'key_123f4ae2-23ac-499e-9e12-732e0681f931',
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
   answer: '__capture_only_intended__',
   options: {
     media: null,
@@ -347,5 +347,668 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '55eaa9004ab85d5b04406790615ea5b9'
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC0339245E551B09849195D524232B2A',
+    participant: undefined
+  },
+  messageTimestamp: 1759019631,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Para 4  a las 8',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Para 4  a las 8',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC8E96872826BFED070D2A1CA6C824A4',
+    participant: undefined
+  },
+  messageTimestamp: 1759019661,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cual es meni de hoy',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Cual es meni de hoy',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC034764D2546089E40765A0153ECE22',
+    participant: undefined
+  },
+  messageTimestamp: 1759019676,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cual es menu de hoy',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Cual es menu de hoy',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC3BB40A72C9CE88C9A81D69CEB2FA31',
+    participant: undefined
+  },
+  messageTimestamp: 1759019697,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cuales son las vegetarianas',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Cuales son las vegetarianas',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC7BC1049E02F77B432F62A931557AC7',
+    participant: undefined
+  },
+  messageTimestamp: 1759019726,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Necesito la recerva para esta noche',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Necesito la recerva para esta noche',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'ACF6CC8095F2A6FD447D1293A3A25CC3',
+    participant: undefined
+  },
+  messageTimestamp: 1759019742,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Para mañana',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Para mañana',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC9E023215FA2B9847E0E99B4C1B3722',
+    participant: undefined
+  },
+  messageTimestamp: 1759019754,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cual es la recerva',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Cual es la recerva',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC2E7126916F3F2621AB79D06C5A0FE0',
+    participant: undefined
+  },
+  messageTimestamp: 1759025006,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_901556d8-eea6-46fa-9a13-4b50f18b5684',
+  keyword: 'key_eb422987-540d-42a6-8842-2c1892272563',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'dce2258efb7a2a70cebd8e78294ae746'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'ACC6EFCBDA58C1AB1B997AD3CB3DA24A',
+    participant: undefined
+  },
+  messageTimestamp: 1759025025,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Como esta',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Como esta',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC291CDB92541EA2E37BEC18C9013CDA',
+    participant: undefined
+  },
+  messageTimestamp: 1759025031,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Como esta',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Como esta',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'ACF571ABEE9580FD35A08E41380D33A8',
+    participant: undefined
+  },
+  messageTimestamp: 1759025065,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cual es menu de hoy',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Cual es menu de hoy',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'ACDCFAFCAB0BB330EEB65283D873DCB4',
+    participant: undefined
+  },
+  messageTimestamp: 1759025092,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Excelente tiene mesas disponible',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Excelente tiene mesas disponible',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC845D4D79F6B8FEAE08D03092CCFA67',
+    participant: undefined
+  },
+  messageTimestamp: 1759025120,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Para la 8 de la noche para 4 perosnas',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Para la 8 de la noche para 4 perosnas',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC4797437E872FE49766E95E77CFB101',
+    participant: undefined
+  },
+  messageTimestamp: 1759025152,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Muy bien has la reserva',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Muy bien has la reserva',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC1DA90EBF9688524EEBF18F9ABCEE89',
+    participant: undefined
+  },
+  messageTimestamp: 1759025181,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Para 4 personas a las 8 de la noche',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Para 4 personas a las 8 de la noche',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'AC5D824D9729BCBE04B571FF3A0EB97D',
+    participant: undefined
+  },
+  messageTimestamp: 1759025202,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Dame la recerva',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Dame la recerva',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573192184584@s.whatsapp.net',
+    fromMe: false,
+    id: 'ACD785587924FA3AFB251A686FB834BE',
+    participant: undefined
+  },
+  messageTimestamp: 1759025215,
+  pushName: 'Mayra',
+  broadcast: false,
+  message: Message {
+    conversation: 'Para hoy',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Para hoy',
+  from: '573192184584'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_06df7962-34b0-4477-9baa-3a3a18160420',
+  keyword: 'key_0d6bfa92-1cb5-4bd2-a0d1-22a03e0e5a84',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3c31cda849b8d251669efcf7e8ce44f4'
 }
